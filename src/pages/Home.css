@@ -1,0 +1,109 @@
+:root {
+    --primary-main: #1976d2;
+    --background-default: #f5f5f5; 
+    --text-primary: #333;
+    --text-secondary: #777;
+    --border-radius: 10px;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+body {
+    background-color: var(--background-default);
+    font-family: 'Roboto', sans-serif;
+    color: var(--text-primary);
+    margin: 0;
+    padding: 0;
+}
+
+
+
+    h1, h2 {
+    color: var(--primary-main);
+    font-weight: 400;
+    margin-bottom: 0.8rem;
+    letter-spacing: 0.5px;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 1.8rem;
+}
+
+/* Texto */
+p {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0.8rem 0;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.card {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0px 4px 16px var(--shadow-color);
+    background-color: #fff;
+    padding: 2rem;
+    margin-top: 3rem;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+    box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.img-small {
+    width: 100%;
+    max-width: 400px; 
+    border-radius: var(--border-radius);
+    box-shadow: 0px 4px 16px var(--shadow-color);
+    transition: transform 0.2s ease-in-out;
+    margin: 1rem auto;
+}
+
+.img-small:hover {
+    transform: scale(1.05);
+}
+
+
+.button-primary {
+    padding: 12px 24px;
+    font-size: 1.1rem;
+    border: 2px solid var(--primary-main);
+    border-radius: var(--border-radius);
+    background-color: transparent;
+    color: var(--primary-main);
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, transform 0.2s;
+    margin-top: 1.5rem;
+}
+
+.button-primary:hover {
+    background-color: var(--primary-main);
+    color: #fff;
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .img-small {
+        width: 80%; 
+    }
+
+    .container {
+        padding: 1rem;
+    }
+}
