@@ -146,7 +146,7 @@ const ProductManager = () => {
   ];
 
   return (
-    <Box p={4} bgcolor="#f9f9f9" minHeight="100vh">
+    <Box p={1} bgcolor="#f9f9f9" minHeight="100vh">
       <Typography variant="h4" gutterBottom align="center">
         Gestión de Productos
       </Typography>
