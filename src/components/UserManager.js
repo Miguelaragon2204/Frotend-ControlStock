@@ -34,7 +34,12 @@ const UserManager = () => {
   const fetchUsers = async () => {
     try {
       const response = await api.get("/users");
-      setUsers(response.data);
+      const sortedUsers = response.data.sort((a, b) => {
+        if (a.role === "admin" && b.role !== "admin") return -1;
+        if (a.role !== "admin" && b.role === "admin") return 1;
+        return 0;
+      });
+      setUsers(sortedUsers);
     } catch (error) {
       console.error("Error al obtener usuarios:", error);
       setUsers([]);
@@ -235,7 +240,11 @@ const UserManager = () => {
                     <TableCell>{user.role}</TableCell>
                     <TableCell>{user.isSuspended ? "Suspendido" : "Activo"}</TableCell>
                     <TableCell>
-                      {userRole === "admin" && (
+                      {user.role === "admin" ? (
+                        <Typography color="textSecondary">
+                          No editable
+                        </Typography>
+                      ) : (
                         <>
                           <IconButton
                             color="warning"
